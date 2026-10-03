@@ -33,6 +33,31 @@ CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-app-partexp luci-i18n-partexp-zh-cn"
 # MosDNS
 #CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-app-mosdns luci-i18n-mosdns-zh-cn"
 
+
+# ============= USB 网络相关驱动（ZTE F30B Pro 等USB网卡设备必备） ==============
+# USB 2.0/3.0 主机控制器驱动
+CUSTOM_PACKAGES="$CUSTOM_PACKAGES kmod-usb2 kmod-usb3"
+# USB 网络设备核心框架
+CUSTOM_PACKAGES="$CUSTOM_PACKAGES kmod-usb-net"
+# USB Ethernet 适配器驱动（Realtek RTL8152/RTL8153，常见于USB网卡）
+CUSTOM_PACKAGES="$CUSTOM_PACKAGES kmod-usb-net-rtl8152"
+# USB Ethernet 适配器驱动（ASIX AX88179）
+#CUSTOM_PACKAGES="$CUSTOM_PACKAGES kmod-usb-net-ax88179"
+# USB Ethernet 适配器驱动（RNDIS，部分手机USB共享网络用）
+#CUSTOM_PACKAGES="$CUSTOM_PACKAGES kmod-usb-net-rndis"
+# USB Ethernet 适配器驱动（CDC Ethernet，部分4G/5G网卡用）
+#CUSTOM_PACKAGES="$CUSTOM_PACKAGES kmod-usb-net-cdc-ether"
+# USB Ethernet 适配器驱动（CDC NCM，华为部分网卡用）
+#CUSTOM_PACKAGES="$CUSTOM_PACKAGES kmod-usb-net-huawei-cdc-ncm"
+# USB 存储驱动（U盘/移动硬盘）
+#CUSTOM_PACKAGES="$CUSTOM_PACKAGES kmod-usb-storage kmod-usb-storage-extras"
+# USB 串口驱动（USB转串口芯片，如PL2303/CP2102）
+#CUSTOM_PACKAGES="$CUSTOM_PACKAGES kmod-usb-serial kmod-usb-serial-option"
+# USB 工具（lsusb 等命令）
+CUSTOM_PACKAGES="$CUSTOM_PACKAGES usbutils"
+# USB OHCI/EHCI 控制器驱动（USB 1.1）
+#CUSTOM_PACKAGES="$CUSTOM_PACKAGES kmod-usb-ohci kmod-usb-ehci"
+
 # 仓库内代理相关apk
 #CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-i18n-nikki-zh-cn"
 #luci-app-openvpn-server 配置文件存在bug 因此请勿集成 避免报错 但你可以集成luci-i18n-openvpn-zh-cn
